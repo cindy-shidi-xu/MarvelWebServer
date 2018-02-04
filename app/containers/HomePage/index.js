@@ -100,7 +100,8 @@ HomePage.propTypes = {
 export function mapDispatchToProps(dispatch) {
   return {
     onChangeTitle: (evt) => dispatch(changeTitle(evt.target.value)),
-    onSubmitForm: () => {
+    onSubmitForm: (evt) => {
+      if (evt !== undefined && evt.preventDefault) evt.preventDefault();
       dispatch(searchComics());
     },
     onMoveForward: () => {
