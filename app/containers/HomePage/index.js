@@ -30,6 +30,10 @@ import saga from './saga';
 
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
+  componentDidMount() {
+    this.props.onSubmitForm();
+  }
+
   render() {
     const { loading, error, books, totalNumber, offset, onSubmitForm, onChangeTitle, title } = this.props;
     const bookListProps = {
